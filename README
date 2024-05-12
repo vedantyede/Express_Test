@@ -2,3 +2,14 @@ This projest is test project,
 May be later i will use it as a template for my future projects.
 For now this project is made from taking reference from, https://dev.to/m_josh/build-a-jwt-login-and-logout-system-using-expressjs-nodejs-hd2
 
+#Steps that I followed.
+1. Setting up the development files, installing required packages, and creating a database.
+  a. npm init
+  b. npm install express mongoose bcrypt cookie-parser dotenv cors express-validator jsonwebtoken
+  c. npm install --save-dev nodemon
+  d. Create a database on MongoDB
+2. Creating Main Route and API server instance
+3. Create a server instance for your API
+4. Create a user model
+5. Create an Input validation
+6. Create an authentication controller and routes
