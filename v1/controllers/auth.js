@@ -46,9 +46,9 @@ export async function Register(req, res) {
 }
 
 export async function Login(req, res) {
+  const { email, password } = req.body;
   // get required variables from request body
   // using es6 object destructing
-  const { email } = req.body;
   try {
     const user = await User.findOne({ email }).select("+password");
     // if user not exist
@@ -60,25 +60,24 @@ export async function Login(req, res) {
     }
     // if user exist
     // validate password
-    const isMatch = bcrypt.compare(`${req.body.password}`, user.password);
-    if (!isMatch) {
+    if (user.password !== password) {
       return res.status(400).json({
         status: "fail",
         message: "Invalid password",
       });
     }
     // return user info except password
-    const {password, ...user_data} = user._doc;
+    const { pass, ...user_data } = user._doc;
     res.status(200).json({
       status: "success",
       data: [user_data],
       message: "Login successful",
     });
-  } catch(err) {
+  } catch (err) {
     console.error(err);
     return res.status(500).json({
       status: "fail",
-      code:500,
+      code: 500,
       data: [],
       message: "Internal server error",
       // message: err.message,
