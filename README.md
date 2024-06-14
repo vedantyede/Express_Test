@@ -43,7 +43,7 @@ MongoDB (or a MongoDB Atlas cluster)
 
 1. Clone the repository:
 
-```git clone https://github.com/your-username/expressjs-auth-project.git```
+```git clone https://github.com/vedantyede/Express_Test.git```
 
 2. Navigate to the project directory:
 
