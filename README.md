@@ -103,7 +103,7 @@ To access protected routes, include the JWT in the Authorization header of your 
 
 ## Project Structure
 
-├── v1
+<!-- ├── v1
 │   ├── config
 │   ├── controllers
 │   ├── middleware
@@ -113,7 +113,7 @@ To access protected routes, include the JWT in the Authorization header of your 
 ├── .gitignore
 ├── package.json
 ├── package-lock.json
-└── README.md
+└── README.md -->
 
 ## Technologies Used
 
