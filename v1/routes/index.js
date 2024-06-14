@@ -1,6 +1,9 @@
 import express from "express";
+import Auth from "./auth.js";
 
 const app = express();
+
+app.use("/v1/auth", Auth);
 
 app.disable("x-powered-by");
 

@@ -19,8 +19,7 @@ server.use(express.urlencoded({ extended: false }));
 mongoose.promise = global.Promise;
 mongoose.connect(URI, {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
+  useUnifiedTopology: true
 }).then(() => console.log("Connected to database!")).catch((err) => console.log(err));
 
 // === 4 - CONFIGURE ROUTES ===

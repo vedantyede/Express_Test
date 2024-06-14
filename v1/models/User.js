@@ -38,9 +38,12 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-UserSchema.pre("save", async function (next) {
+userSchema.pre("save", async function (next) {
+    
   const user = this;
+
   if (!user.isModified("password")) return next();
+
   bcrypt.genSalt(10,(err,salt)=>{
     if(err) return next(err);
 
@@ -49,6 +52,7 @@ UserSchema.pre("save", async function (next) {
       user.password = hash;
       next();
     });
+
   })
 });
 
